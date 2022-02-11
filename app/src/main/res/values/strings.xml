@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="retry">Retry</string>
+    <string name="error">Error while loading news</string>
+    <string name="error_no_internet_connection">You are not connected to the internet. Please check your connection and try again.</string>
+    <string name="empty_response">No news found</string>
+
+</resources>
