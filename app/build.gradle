@@ -37,22 +37,20 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
     }
-    flavorDimensions "version"
+    flavorDimensions "default"
     productFlavors {
         prod {
             buildConfigField("String", "BASE_URL", "\"http://api.nytimes.com/svc/mostpopular/v2/\"")
-            manifestPlaceholders.usesCleartextTraffic = /*"false"*/ "true"
+            manifestPlaceholders.usesCleartextTraffic = "true"
         }
         dev {
             buildConfigField("String", "BASE_URL", "\"http://api.nytimes.com/svc/mostpopular/v2/\"")

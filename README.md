@@ -3,7 +3,7 @@ Android, Clean Architecture, MVVM, JetpackCompose, Kotlin Flows, Dagger Hilt, Re
 
 News App implemented using a modern approach of Android app development using MVVM Clean Architecture that is scalable and maintainable.
 
-<img src="b1-news_list.png" height="500" alt="Screenshot"/> <img src="2-news_details.png" height="500" alt="Screenshot"/> <img src="3-news_details.png" height="500" alt="Screenshot"/> <img src="4-news_list.png" height="500" alt="Screenshot"/>
+<img src="1-news_list.png" height="500" alt="Screenshot"/> <img src="2-news_details.png" height="500" alt="Screenshot"/> <img src="3-news_details.png" height="500" alt="Screenshot"/> <img src="4-news_list.png" height="500" alt="Screenshot"/>
 
 ## Clean Architecture
 Clean Architecture is a Use Case driven architecture, hence each repository method exists only because it is supporting a Use Case.
