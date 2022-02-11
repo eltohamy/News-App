@@ -35,13 +35,13 @@ fun NewsListItem(result: Result, onItemClick: (Result) -> Unit) {
             .clickable { onItemClick(result) }
             .padding(horizontal = 20.dp, vertical = 10.dp)
     ) {
+        if (result.media?.isNotEmpty() == true && result.media[0]?.mediaMetaData?.isNotEmpty() == true)
         Card(
             modifier = Modifier
                 .width(50.dp)
                 .height(50.dp).clip(CircleShape).align(alignment = Alignment.CenterVertically),
             elevation = 3.dp
         ) {
-            if (result.media?.isNotEmpty() == true && result.media[0]?.mediaMetaData?.isNotEmpty() == true)
                 Image(
                     modifier = Modifier
                         .fillMaxWidth()
