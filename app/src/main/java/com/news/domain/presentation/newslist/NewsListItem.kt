@@ -41,20 +41,21 @@ fun NewsListItem(result: Result, onItemClick: (Result) -> Unit) {
                 .height(50.dp).clip(CircleShape).align(alignment = Alignment.CenterVertically),
             elevation = 3.dp
         ) {
-            Image(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight()
+            if (result.media?.isNotEmpty() == true && result.media[0]?.mediaMetaData?.isNotEmpty() == true)
+                Image(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight()
 //                .aspectRatio(1f, matchHeightConstraintsFirst = true)
-                    .clip(CircleShape)
+                        .clip(CircleShape)
 //                    .border(width = 1.dp, shape = CircleShape, color = Color.Blue)
-                ,
-                contentScale = ContentScale.Fit,
-                painter = rememberImagePainter(
-                    result.media?.get(0)?.mediaMetaData?.get(0)?.url ?: ""
-                ),
-                contentDescription = null
-            )
+                    ,
+                    contentScale = ContentScale.Fit,
+                    painter = rememberImagePainter(
+                        result.media[0]?.mediaMetaData?.get(0)?.url ?: ""
+                    ),
+                    contentDescription = null
+                )
         }
         Spacer(modifier = Modifier.padding(vertical = 5.dp))
         Column(

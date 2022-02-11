@@ -31,7 +31,7 @@ object NetworkingModule {
 
     @Provides
     fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
-        loggingInterceptor.setLevel(/*if (BuildConfig.DEBUG) */HttpLoggingInterceptor.Level.BODY /*else HttpLoggingInterceptor.Level.NONE*/)
+        loggingInterceptor.setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
         val okHttpClient = OkHttpClient().newBuilder()
         okHttpClient.addInterceptor(Interceptor { chain: Interceptor.Chain ->
             val original = chain.request()

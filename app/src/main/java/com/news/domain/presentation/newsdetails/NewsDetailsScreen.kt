@@ -47,21 +47,22 @@ fun NewsDetailsScreen(
                 .verticalScroll(scrollState)
         ) {
             BaseAppBar(title = title ?: "", navController)
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(250.dp), elevation = 2.dp
-            ) {
-                Image(
+            if (url?.isNotBlank() == true)
+                Card(
                     modifier = Modifier
-                        .fillMaxSize()
-                        .clip(RoundedCornerShape(3.dp))
-                        .border(width = 10.dp, shape = CircleShape, color = Color.Transparent),
-                    contentScale = ContentScale.FillWidth,
-                    painter = rememberImagePainter(url),
-                    contentDescription = null
-                )
-            }
+                        .fillMaxWidth()
+                        .height(250.dp), elevation = 2.dp
+                ) {
+                    Image(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .clip(RoundedCornerShape(3.dp))
+                            .border(width = 10.dp, shape = CircleShape, color = Color.Transparent),
+                        contentScale = ContentScale.FillWidth,
+                        painter = rememberImagePainter(url),
+                        contentDescription = null
+                    )
+                }
             Spacer(Modifier.padding(vertical = 5.dp))
             Text(
                 text = publishedDate ?: "",

@@ -52,9 +52,9 @@ fun NewsListScreen(
                                           */
                                         navController.navigate(
                                             Screens.NewsDetailsScreen.route + "?title=${it.title},?abstractString=${it.abstractString},?url=${
-                                                it.media?.get(
-                                                    0
-                                                )?.mediaMetaData?.last()?.url ?: ""
+                                                if (it.media?.isNotEmpty() == true && it.media[0]?.mediaMetaData?.isNotEmpty() == true)
+                                                    it.media[0]?.mediaMetaData?.last()?.url ?: " "
+                                                else " "
                                             },?publishedDate=${it.published_date}"
                                         )
                                     })
